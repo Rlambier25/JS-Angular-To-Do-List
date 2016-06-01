@@ -9,8 +9,7 @@ import { Task } from './task.model';
     <div class="container">
       <h1>To Do</h1>
       <task-list
-        [taskList]="tasks"
-        (onTaskSelect)="taskWasSelected($event)">
+        [taskList]="tasks">
       </task-list>
     </div>
   `
@@ -25,8 +24,5 @@ export class AppComponent {
       new Task("third task", 2),
       new Task("fourth task", 3)
     ];
-  }
-  taskWasSelected(clickedTask: Task): void {
-    console.log('parent', clickedTask);
   }
 }

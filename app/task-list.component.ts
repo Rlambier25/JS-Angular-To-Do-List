@@ -8,7 +8,6 @@ import { DonePipe } from './done.pipe';
 @Component({
   selector: 'task-list',
   inputs: ['taskList'],
-  outputs: ['onTaskSelect'],
   pipes: [DonePipe],
   directives: [TaskComponent, EditTaskDetailsComponent, NewTaskComponent],
   template: `
@@ -37,7 +36,6 @@ export class TaskListComponent {
   taskClicked(clickedTask: Task): void {
     console.log('child', clickedTask);
     this.selectedTask = clickedTask;
-    this.onTaskSelect.emit(clickedTask);
   }
   createTask(description: string): void {
     this.taskList.push(
